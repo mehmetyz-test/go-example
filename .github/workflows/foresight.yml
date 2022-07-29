@@ -27,14 +27,14 @@ jobs:
         go-version: 1.18
 
     - name: Test Go
-      run: go test -json ./... > ./test-report.json
+      run: ./test.sh
       
     - name: Analyze Test and/or Coverage Results
       if: always()
       uses: thundra-io/foresight-test-kit-action@v1
       with:
         api_key: ${{ secrets.FORESIGHT_API_KEY }}
-        test_framework: golang
-        test_path: "./test-report.json"
+        coverage_format: golang
+        coverage_path: "./coverage.txt"
     
     
