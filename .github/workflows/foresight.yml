@@ -33,6 +33,7 @@ jobs:
       run: go test -v ./... -coverprofile="coverage.out"
       
     - name: LS
+      if: always()
       run: ls -lR
       
     - name: Analyze Test and/or Coverage Results
