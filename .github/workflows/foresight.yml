@@ -38,6 +38,6 @@ jobs:
       with:
         api_key: ${{ secrets.FORESIGHT_API_KEY }}
         coverage_format: golang
-        coverage_path: "./coverage.out"
+        coverage_path: "coverage.out"
     
     
