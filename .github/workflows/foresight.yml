@@ -30,7 +30,7 @@ jobs:
         go-version: 1.18
 
     - name: Test Go
-      run: ./test.sh
+      run: go test -v -json ./... > ./test-report.json -coverprofile=coverage.out
       
     - name: Analyze Test and/or Coverage Results
       if: always()
@@ -38,6 +38,6 @@ jobs:
       with:
         api_key: ${{ secrets.FORESIGHT_API_KEY }}
         coverage_format: golang
-        coverage_path: "./coverage.txt"
+        coverage_path: "./coverage.out"
     
     
