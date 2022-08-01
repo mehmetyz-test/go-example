@@ -30,7 +30,7 @@ jobs:
         go-version: 1.18
 
     - name: Test Go
-      run: go test -v -json ./... > ./test-report.json -coverprofile=coverage.out
+      run: go test -v -json ./... > ./test-report.json -coverprofile="coverage.out"
       
     - name: Analyze Test and/or Coverage Results
       if: always()
