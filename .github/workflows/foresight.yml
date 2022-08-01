@@ -30,7 +30,7 @@ jobs:
         go-version: 1.18
 
     - name: Test Go
-      run: go test -v ./... -coverprofile="coverage.out"
+      run: ./test.sh
       
     - name: LS
       if: always()
